@@ -42,3 +42,9 @@ spec:
       containers:
         - name: node-app-cont
           image: erickmwarama/kub-first-app:2
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            periodSeconds: 10
+            initialDelaySeconds: 10
